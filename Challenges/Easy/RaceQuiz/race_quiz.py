@@ -10,5 +10,6 @@ def average_speed(v1, ratio):
     return v_average
 
 
-for i in range(1, 1000):
-    print(f'ratio v1:v2, 1:{i}, average speed: {round(average_speed(v1, i), 6)}')
+if __name__ == '__main__':
+    for i in range(1, 1000):
+        print(f'ratio v1:v2, 1:{i}, average speed: {round(average_speed(v1, i), 6)}')
