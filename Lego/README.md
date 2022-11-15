@@ -5,9 +5,9 @@ Purpose:
 > Rubiks Scrambler based on David Gilday design MindCuber-RI robot Rubik's Cube solver
 
 Explanation:   
-> There are 3 moves defined: one to flip the cube, one to rotate the bottom and one to
+> There are 3 commands defined: one to flip the cube, one to rotate the bottom and one to
 > rotate the whole cube. All of them can do clockwise or counterclockwise based on
-> their direction parameter (-1 or 1). Those 3 moves are arranged to create moves
+> their direction parameter (-1 or 1). Those 3 commands are arranged to create moves
 > U, D, R, L, F, B, U', D', R', L', F', B', 2U, 2D, 2R, 2L, 2F, and 2B. Algorithm
 > then create a sequence of 20 randomly picked moves from this list, and perform these moves.
 
