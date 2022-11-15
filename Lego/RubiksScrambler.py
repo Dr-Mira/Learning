@@ -46,10 +46,10 @@ def rotate_bottom(direction):
     wait_for_seconds(0.5)
     if direction == -1:
         mot_m.run_for_degrees(320, 80)
-        mot_m.run_for_degrees(-50, 80)
+        mot_m.run_for_degrees(-51, 80)
     elif direction == 1:
         mot_m.run_for_degrees(-320, 80)
-        mot_m.run_for_degrees(50, 80)
+        mot_m.run_for_degrees(51, 80)
     wait_for_seconds(0.1)
     arms_open()
 
@@ -58,13 +58,15 @@ def cube_flip(direction):
     if direction == 1:
         mot_r.start(80)
         wait_for_seconds(0.5)
-        mot_r.start(-50)
         mot_l.start(-80)
+        wait_for_seconds(0.1)
+        mot_r.start(-50)
     elif direction == -1:
         mot_l.start(-80)
         wait_for_seconds(0.5)
-        mot_l.start(50)
         mot_r.start(80)
+        wait_for_seconds(0.1)
+        mot_l.start(50)
     wait_for_seconds(0.2)
     arms_open()
 
