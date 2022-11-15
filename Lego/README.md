@@ -40,7 +40,7 @@ Formal:
 > - Copyright:    
 > (C) 2022 Mira Kaspar
 > - Website:      
->http://mindcuber.com
+>http://mindcuber.com, https://github.com/Dr-Mira/Learning/tree/main/Lego
 > - Usage:        
 >This software may be used for any non-commercial purpose providing
 >that the authors David Gilday and Mira Kaspar are acknowledged.
