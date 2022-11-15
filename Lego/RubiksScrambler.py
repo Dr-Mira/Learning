@@ -1,7 +1,7 @@
 # --------------------------------------------------------------------------------------------------
 # MindCuber-Scrambler
 #
-# information on https://github.com/Dr-Mira/Learning/Lego
+# information on https://github.com/Dr-Mira/Learning/tree/main/Lego
 # ---------------------------------------------------------------------------------------------------
 
 from mindstorms import Motor, MSHub, MotorPair, ColorSensor, DistanceSensor
