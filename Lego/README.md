@@ -1,6 +1,10 @@
 --------------------------------------------------------------------------------------------------
 MindCuber-Scrambler
 ------------------------------------------------------------------------------------------------
+How to install:
+> 1. Copy the content of the RubiksScrambler.py script into free slot of the hub
+> 2. Play
+
 Purpose:      
 > Rubiks Scrambler based on David Gilday design MindCuber-RI robot Rubik's Cube solver
 
