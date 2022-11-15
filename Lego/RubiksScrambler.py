@@ -20,7 +20,7 @@ color_sensor = ColorSensor('C')
 distance_sensor = DistanceSensor('A')
 color_sensor.light_up_all(0)
 
-no_of_scrambles = 30
+no_of_scrambles = 20
 
 
 def arms_open():
