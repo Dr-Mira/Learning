@@ -29,6 +29,9 @@ Notes:
 > There is room for optimization, for example sometimes the robot
 > perform 2 consecutive U2.
 
+> I have only one cube at home (108 g), so I could not test it on other cubes. 
+> You might want to play a bit with motor speeds or timing in the script to make it smooth
+
 > You can play with the script as you please. Enjoy.
 ---------------------------------------------------------------------------------------------------
 Formal:
