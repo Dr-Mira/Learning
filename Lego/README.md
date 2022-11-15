@@ -13,19 +13,19 @@ Explanation:
 
 Notes:   
 > Please note that this is not truly random but a pseudo-random, as sequence is generated with
-> Python random module
+> Python random module.
 
 > This script do not mimic wide moves (u, d, r, l, f, b) and slice moves (M, E, S)
 
 > All moves are relative to the cube position from previous step. 
 > In other words, if you use commercial cube scrambler it will scramble differently for same sequence. 
-> This is because we only can rotate the bottom piece. We are saving time not to move cube to its 
-> staring position each time (yellow up, blue forward, red right)
+> This is because the robot can rotate only the bottom piece, thus we are saving time not to move cube to its 
+> staring position after each move (yellow up, blue forward, red right).
 
 > Lastly, there is room for optimization, for example sometimes the robot
 > perform 2 consecutive U2.
 
-> You can play with the script as you please. Enjoy
+> You can play with the script as you please. Enjoy.
 ---------------------------------------------------------------------------------------------------
 Formal:
 
