@@ -26,7 +26,7 @@ Notes:
 > This is because the robot can rotate only the bottom piece, thus we are saving time not to move cube to its 
 > staring position after each move (yellow up, blue forward, red right).
 
-> Lastly, there is room for optimization, for example sometimes the robot
+> There is room for optimization, for example sometimes the robot
 > perform 2 consecutive U2.
 
 > You can play with the script as you please. Enjoy.
