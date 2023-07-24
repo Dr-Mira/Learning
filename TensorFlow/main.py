@@ -1,7 +1,7 @@
 # Initial file
 
 def main():
-print('ola')
+    print('ola')
 
 
 if __name__ == '__main__':
