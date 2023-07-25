@@ -1,0 +1,22 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: '# write your code here'
+  learner_created: false
+- name: mira.json
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/9004#comment
+status: Failed
+feedback:
+  message: |
+    Failed. Runtime error
+
+    Error:
+    Traceback (most recent call last):
+      File "jailed_code", line 14, in <module>
+        x.close()
+    AttributeError: 'dict' object has no attribute 'close'
+  time: Mon, 31 Jan 2022 20:16:30 UTC
+record: -1
