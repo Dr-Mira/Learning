@@ -1,0 +1,352 @@
+<h5 id="description">Description</h5>
+
+<p>During previous stages, we have created a program that can find file duplicates. In this stage, we need to add the ability to delete files and print the information about them.</p>
+
+<h5 id="objectives">Objectives</h5>
+
+<p>Keep the functionality from the previous stages. To complete this stage, your program should do the following:</p>
+
+<ol>
+	<li>Ask a user whether they want to delete files. Expect either <code class="java">yes</code> or <code class="java">no</code> as the answer. Print <code class="java">Wrong option</code> if it receives any other input. Repeat until a user provides a valid answer. If <code class="java">yes</code>, read what files a user wants to delete and then delete them. Otherwise, abort the program;</li>
+	<li>Read a sequence of files that a user wants to delete and then delete them. Input should contain only file numbers separated by spaces. Print <code class="java">Wrong format</code> if it receives empty string or any other input. Repeat until a user provides a valid answer;</li>
+	<li>Print the total freed up space in bytes.</li>
+</ol>
+
+<p>Please note: you should use full path to file <strong>from root directory</strong> when printing or reading.</p>
+
+<h5 id="examples">Examples</h5>
+
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<p>Suppose, you have the following set of files and folders:</p>
+
+<pre><code class="language-no-highlight">+---[root_folder]
+    +---gordon_ramsay_chicken_breast.avi /4590560 bytes
+    +---poker_face.mp3 /5550640 bytes
+    +---poker_face_copy.mp3 /5550640 bytes
+    +---[audio]
+    |   |
+    |   +---voice.mp3 /2319746 bytes
+    |   +---sia_snowman.mp3 /4590560 bytes
+    |   +---nea_some_say.mp3 /3232056 bytes
+    |   +---[classic]
+    |   |   |
+    |   |   +---unknown.mp3 /3422208 bytes
+    |   |   +---vivaldi_four_seasons_winter.mp3 /9158144 bytes
+    |   |   +---chopin_waltz7_op64_no2.mp3 /9765504 bytes
+    |   +---[rock]
+    |       |
+    |       +---smells_like_teen_spirit.mp3 /4590560 bytes
+    |       +---numb.mp3 /5786312 bytes
+    +---[masterpiece]
+        |
+        +---rick_astley_never_gonna_give_you_up.mp3 /3422208 bytes</code></pre>
+
+<p>Program output:</p>
+
+<pre><code class="language-no-highlight">&gt; python handler.py root_folder
+
+Enter file format:
+&gt;
+
+Size sorting options:
+1. Descending
+2. Ascending
+
+Enter a sorting option:
+&gt; 1
+
+5550640 bytes
+root_folder/poker_face.mp3
+root_folder/poker_face_copy.mp3
+
+4590560 bytes
+root_folder/gordon_ramsay_chicken_breast.avi
+root_folder/audio/sia_snowman.mp3
+root_folder/audio/rock/smells_like_teen_spirit.mp3
+
+3422208 bytes
+root_folder/audio/classic/unknown.mp3
+root_folder/masterpiece/rick_astley_never_gonna_give_you_up.mp3
+
+Check for duplicates?
+&gt; yes
+
+5550640 bytes
+Hash: 909ba4ad2bda46b10aac3c5b7f01abd5
+1. root_folder/poker_face.mp3
+2. root_folder/poker_face_copy.mp3
+
+3422208 bytes
+Hash: a7f5f35426b927411fc9231b56382173
+3. root_folder/audio/classic/unknown.mp3
+4. root_folder/masterpiece/rick_astley_never_gonna_give_you_up.mp3
+
+Delete files?
+&gt; yes
+
+Enter file numbers to delete:
+&gt; 1 2 5
+
+Wrong format
+
+Enter file numbers to delete:
+&gt; 1 2 4
+
+Total freed up space: 14523488 bytes</code></pre>
+
+<h5 id="theory">Theory</h5>
+
+<p>Let's get straight to the point. For our task, we need the <code class="java">os.walk</code> method. The Tutorial's Point <a target="_blank" target="_blank" target="_blank" target="_blank" target="_blank" href="https://www.tutorialspoint.com/python3/os_walk.htm" rel="noopener noreferrer nofollow">guide</a> can shed some light on how to use it.</p>
+
+<h5 id="description">Description</h5>
+
+<p>A computer is a great thing. It helps us store and manage tons of information. Every user knows how to work with folders. In this step, we will learn how to get a list of files and folders within a specific directory.</p>
+
+<ul>
+</ul>
+
+<h5 id="objectives">Objectives</h5>
+
+<p>In this stage, your program should:</p>
+
+<ol>
+	<li>Accept a command-line argument that is a root directory with files and folders. Print <code class="java">Directory is not specified</code> if there is no command-line argument;</li>
+	<li>Iterate over folders and print file names with their paths. The direction of the slashes in the printed out paths do not matter. Tests are platform independent, so different style of slashes ("/" or "\") are valid.</li>
+</ol>
+
+<h5 id="example">Example</h5>
+
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<p>Suppose, you have the following set of files and folders:</p>
+
+<pre><code class="language-no-highlight">+---[root_folder]
+    |
+    +---wall.png
+    +---pass.txt
+    +---[docs]
+    |   |
+    |   +---project.py
+    |   +---calc.xls
+    |   +---tutorial.mp4
+    |   +---[res]
+    |       |
+    |       +---data.json
+    |   +---[output]
+    |       |
+    |       +---result.json
+    +---[masterpiece]
+        |
+        +---rick_astley_never_gonna_give_you_up.mp3</code></pre>
+
+<p>Program output: </p>
+
+<pre><code class="language-no-highlight">&gt; python handler.py root_folder
+
+root_folder/wall.png
+root_folder/pass.txt
+root_folder/docs/project.py
+root_folder/docs/calc.xls
+root_folder/docs/tutorial.mp4
+root_folder/docs/res/data.json
+root_folder/docs/output/result.json
+root_folder/masterpiece/rick_astley_never_gonna_give_you_up.mp3</code></pre>
+
+<h5 id="description">Description</h5>
+
+<p>In this stage, we start by identifying files of the same size in bytes. The <code class="java">os.path</code> module allows you to get access to file extension and size. The <a target="_blank" target="_blank" target="_blank" target="_blank" target="_blank" href="https://docs.python.org/3/library/os.path.html#module-os.path" rel="noopener noreferrer nofollow">Official Documentation</a> can help you with that.</p>
+
+<p>Of course, we cannot be absolutely sure that files of the same size and format are duplicates. This will help us, however, narrow down the search. It is also important to keep track of the scanned files. Add an ability to search for files of a specific file format and then sort the found files by size.</p>
+
+<p><button
+        class="btn-sm btn-outline-secondary"
+        onclick="getElementById('hint-681').style.display='inline'">
+        Hint
+      </button>
+      <div id="hint-681" style="display:none;">Use dictionaries with size as keys and a list of full paths as each key's value.</div></p>
+
+<h5 id="objectives">Objectives</h5>
+
+<p>Keep the functionality from the previous stage. To complete this stage, your program should:</p>
+
+<ol>
+	<li>Accept a command-line argument that is a root directory with files and folders. Print <code class="java">Directory is not specified</code> if there is no command-line argument;</li>
+	<li>Read user input that specifies the file format (see examples). Empty input should match any file format;</li>
+	<li>Print a menu with two sorting options: <code class="java">Descending</code> and <code class="java">Ascending</code>. They both represent the respective order by size of groups of files. Read the input. Print <code class="java">Wrong option</code> if any other input is entered. Repeat until a correct input is provided;</li>
+	<li>Iterate over folders and print the information about files of the same size: their size, path, and names.</li>
+</ol>
+
+<p>Please note: you should use full path to file <strong>from root directory</strong> when printing or reading.</p>
+
+<h5 id="examples">Examples</h5>
+
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<p>Suppose, you have the following set of files and folders:</p>
+
+<pre><code class="language-no-highlight">+---[root_folder]
+    +---gordon_ramsay_chicken_breast.avi /4590560 bytes
+    +---[audio]
+    |   |
+    |   +---voice.mp3 /2319746 bytes
+    |   +---sia_snowman.mp3 /4590560 bytes
+    |   +---nea_some_say.mp3 /3232056 bytes
+    |   +---[classic]
+    |   |   |
+    |   |   +---unknown.mp3 /3422208 bytes
+    |   |   +---vivaldi_four_seasons_winter.mp3 /9158144 bytes
+    |   |   +---chopin_waltz7_op64_no2.mp3 /9765504 bytes
+    |   +---[rock]
+    |       |
+    |       +---smells_like_teen_spirit.mp3 /4590560 bytes
+    |       +---numb.mp3 /5786312 bytes
+    +---[masterpiece]
+        |
+        +---rick_astley_never_gonna_give_you_up.mp3 /3422208 bytes</code></pre>
+
+<p>Program output:</p>
+
+<pre><code class="language-no-highlight">&gt; python handler.py root_folder
+
+Enter file format:
+&gt;mp3
+
+Size sorting options:
+1. Descending
+2. Ascending
+
+Enter a sorting option:
+&gt; 3
+
+Wrong option
+
+Enter a sorting option:
+&gt; 2
+
+3422208 bytes
+root_folder/audio/classic/unknown.mp3
+root_folder/masterpiece/rick_astley_never_gonna_give_you_up.mp3
+
+4590560 bytes
+root_folder/audio/rock/smells_like_teen_spirit.mp3
+root_folder/audio/sia_snowman.mp3</code></pre>
+
+<h5 id="theory">Theory</h5>
+
+<p>Now we have a list of files of the same size. The next step is to check the files with the help of the <a target="_blank" target="_blank" target="_blank" target="_blank" target="_blank" href="https://docs.python.org/3/library/hashlib.html" rel="noopener noreferrer nofollow">Hashlib module</a>. Why do we need to use hash here? The answer is very simple — it's convenient! As you may know, a hash function can take <strong>any</strong> input of <strong>any length</strong>.<strong> </strong>It produces several strings as output.</p>
+
+<p>A hash function has the following main features:</p>
+
+<ul>
+	<li>easy to compute</li>
+	<li>unique output</li>
+	<li>small and fixable output</li>
+</ul>
+
+<p>So, a file type or size plays a minor role. We can get a hash of any file and compare it against a hash of another file.<br>
+We will work with an MD5 hash function of the <a target="_blank" target="_blank" target="_blank" target="_blank" target="_blank" href="https://docs.python.org/3/library/hashlib.html" rel="noopener noreferrer nofollow">Hashlib module</a>. Take a look at some useful functions:</p>
+
+<ul>
+	<li><code class="java">md5()</code> creates a hash object</li>
+	<li><code class="java">update()</code> updates a hash object</li>
+	<li><code class="java">hexdigest()</code> gets the HEX digest</li>
+</ul>
+
+<h5 id="description">Description</h5>
+
+<p>In this stage, we need to get hashes of files of the same size and check whether they are the same file. Remember that <strong>hash works with byte-like objects only</strong>,<strong><span style="color: #ff4363;"> </span></strong>so pay attention to the file read mode (the <code class="java">rb</code> mode).</p>
+
+<h5 id="objectives">Objectives</h5>
+
+<p>Keep the functionality from the previous stages. To complete the stage, your program should:</p>
+
+<ol>
+	<li>Ask for duplicates check;</li>
+	<li>Read user input: <code class="java">yes</code> or <code class="java">no</code> . Print <code class="java">Wrong option</code> if any other input is received. Repeat until a user provides a valid answer. If the input is <code class="java">yes</code>, get the hash of files of the same size; group the files of the same hash, assign numbers to these files. Otherwise, the program should stop the operation;</li>
+	<li>Assign numbers to lines with files after hashing. You should assign numbers to files based on the total number of files in output.  It is needed for the purpose of the next stage.</li>
+	<li>Print the information about the duplicate files along with their hashes (see example). Sort the group of files by size as in the previous stage. You don't have to sort hash subgroups.</li>
+</ol>
+
+<p>Please note: you should use full path to file <strong>from root directory</strong> when printing or reading.</p>
+
+<h5 id="examples">Examples</h5>
+
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+
+<p>Suppose you have the following set of files and folders:</p>
+
+<pre><code class="language-no-highlight">+---[root_folder]
+    +---gordon_ramsay_chicken_breast.avi /4590560 bytes
+    +---poker_face.mp3 /5550640 bytes
+    +---poker_face_copy.mp3 /5550640 bytes
+    +---[audio]
+    |   |
+    |   +---voice.mp3 /2319746 bytes
+    |   +---sia_snowman.mp3 /4590560 bytes
+    |   +---nea_some_say.mp3 /3232056 bytes
+    |   +---[classic]
+    |   |   |
+    |   |   +---unknown.mp3 /3422208 bytes
+    |   |   +---vivaldi_four_seasons_winter.mp3 /9158144 bytes
+    |   |   +---chopin_waltz7_op64_no2.mp3 /9765504 bytes
+    |   +---[rock]
+    |       |
+    |       +---smells_like_teen_spirit.mp3 /4590560 bytes
+    |       +---numb.mp3 /5786312 bytes
+    +---[masterpiece]
+        |
+        +---rick_astley_never_gonna_give_you_up.mp3 /3422208 bytes
+        +---the_magic_flute_queen_of_the_night_aria.mp3 /3422208 bytes
+        +---the_magic_flute_queen_of_the_night_aria_copy.mp3 /3422208 bytes</code></pre>
+
+<p>Program output:</p>
+
+<pre><code class="language-no-highlight">&gt; python handler.py root_folder
+
+Enter file format:
+&gt;
+
+Size sorting options:
+1. Descending
+2. Ascending
+
+Enter a sorting option:
+&gt; 1
+
+5550640 bytes
+root_folder/poker_face.mp3
+root_folder/poker_face_copy.mp3
+
+4590560 bytes
+root_folder/gordon_ramsay_chicken_breast.avi
+root_folder/audio/sia_snowman.mp3
+root_folder/audio/rock/smells_like_teen_spirit.mp3
+
+3422208 bytes
+root_folder/audio/classic/unknown.mp3
+root_folder/masterpiece/rick_astley_never_gonna_give_you_up.mp3
+root_folder/masterpiece/the_magic_flute_queen_of_the_night_aria.mp3
+root_folder/masterpiece/the_magic_flute_queen_of_the_night_aria_copy.mp3
+
+Check for duplicates?
+&gt; yes
+
+5550640 bytes
+Hash: 909ba4ad2bda46b10aac3c5b7f01abd5
+1. root_folder/poker_face.mp3
+2. root_folder/poker_face_copy.mp3
+
+3422208 bytes
+Hash: a7f5f35426b927411fc9231b56382173
+3. root_folder/audio/classic/unknown.mp3
+4. root_folder/masterpiece/rick_astley_never_gonna_give_you_up.mp3
+Hash: b6d767d2f8ed5d21a44b0e5886680cb9
+5. root_folder/masterpiece/the_magic_flute_queen_of_the_night_aria.mp3
+6. root_folder/masterpiece/the_magic_flute_queen_of_the_night_aria_copy.mp3</code></pre>

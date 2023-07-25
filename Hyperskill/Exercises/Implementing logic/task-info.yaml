@@ -1,0 +1,14 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  learner_created: false
+- name: mira.py
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/6275#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Fri, 24 Dec 2021 14:10:11 UTC
+record: -1
